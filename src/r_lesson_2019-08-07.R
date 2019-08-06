@@ -292,3 +292,13 @@ ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
        y = "Petal Length (cm)") +
   theme_minimal()
 
+# Loading data ----------------------------------------------------
+
+# Data are easiest to manage in R if they're in CSV. Excel can easily save
+#   to this format.  Also, GData exports to CSV.
+
+scatter_data <- read_csv("./data/scatter_data.csv")
+
+head(scatter_data)
+
+
