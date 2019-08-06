@@ -300,5 +300,79 @@ ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
 scatter_data <- read_csv("./data/scatter_data.csv")
 
 head(scatter_data)
+summary(scatter_data)
+
+ggplot(scatter_data, aes(x = date_time, y = value, 
+                         color = SITE_CODE, group = SITE_CODE)) +
+  facet_wrap(~ parameter, scales = "free_y") +
+  geom_point() +
+  theme_minimal()
+
+# We can play around with this dataset a lot, pulling out specific variables 
+#   and locations, looking at qualifiers, etc.
+
+# Loops and Conditionals -----------------------------------------
+
+# This is often one of the first things in a "basics of programming" class,
+#   but I left it for last so we could play around with fun stuff earlier.
+
+# Loops: Do one thing over and over
+
+for(i in 1:6) {
+  print(i)
+}
+
+# Or, same thing different way...
+i <- 0
+while(i<6) {
+  i <- i+1
+  print(i)
+}
+
+# Why did 6 print?
+
+#Conditionals evaluate to TRUE or FALSE
+
+1>2
+2<1
+
+#  Equals, greater/less than, and, and or, are the basic building blocks of logic
+TRUE  == TRUE
+FALSE == FALSE
+FALSE | TRUE
+FALSE & TRUE
+
+# SUPER IMPORTANT: one equals ASSIGNS, but two equals EVALUATES
+a <- 3
+b <- 5
+a = b
+a
+b
+
+# Versus...
+a <- 3
+b <- 5
+a == b
+a
+b
+
+# And you can use if statements
+if (1<2) { 
+  print("Math Works!")
+} else {
+  print("Math is a Hoax!")
+}
+
+# You can combine these for MORE POWER!
+
+i <- 1
+while(i<6) {
+  i <- i+1
+  if(i>2) {print(i)}
+}
+
+########
+# El Fin
+########
 
 
